@@ -16,6 +16,9 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { MaterialCustomModule } from './materialCustom.module';
 
 @NgModule({
   imports: [
@@ -29,7 +32,10 @@ import { MessagesComponent } from './messages/messages.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    BrowserAnimationsModule,
+    // Material
+    MaterialCustomModule
   ],
   declarations: [
     AppComponent,

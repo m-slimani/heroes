@@ -60,3 +60,23 @@ h4 {
     min-width: 60px;
   }
 }
+
+mat-card {
+margin-bottom: 1%;
+}
+.mat-grid-list-text{
+  text-align: center
+}
+mat-grid-tile {
+color: #fff;
+background-color: #337ab7;
+border-color: #337ab7;
+}
+mat-grid-tile a {
+  color: #fff;
+  }
+
+  .mat-card-title{
+    background-color: #ffd740;
+    padding: 10px;
+  }

@@ -26,3 +26,17 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  mat-card {
+    text-align: center;
+  }
+  mat-toolbar span {
+    margin-left: 5%;
+  }
+  mat-toolbar button {
+    float: right;
+  }
+  mat-toolbar {
+    margin-bottom: 1%;
+  }
+  

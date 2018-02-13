@@ -1,11 +1,27 @@
 <div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ hero.name | uppercase }} Details
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and birthdate
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Id" value={{hero.id}}>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="hero.name">
+          </mat-form-field>
+        </div>
+        <!-- <input matInput placeholder="First name"> -->
+
+        <button mat-raised-button color="primary" (click)="goBack()">go back</button>
+        <button mat-raised-button color="primary" (click)="save()">save</button>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

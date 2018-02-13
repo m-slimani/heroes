@@ -1,21 +1,48 @@
-<h2>My Heroes</h2>
-
 <div>
-  <label>Hero name:
-    <input #heroName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
-    add
-  </button>
+  <mat-toolbar color="primary">
+    <!-- <span><mat-icon>mood</mat-icon></span> -->
+    <span>My Heroes</span>
+    <!-- <button mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button> -->
+  </mat-toolbar>
+  <mat-card>
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Hero name" #heroName >
+          </mat-form-field>
+
+      <!-- <label>Hero name:
+        <input #heroName />
+      </label> -->
+      <mat-form-field>
+        <input matInput [matDatepicker]="myDatepicker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" 
+        (click)="add(heroName.value); heroName.value=''">Add hero</button>
+      <!-- <button (click)="add(heroName.value); heroName.value=''">
+        add
+      </button> -->
+    </div>
+  </mat-card>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button class="delete" title="delete hero"
-    (click)="delete(hero)">x</button>
-  </li>
-</ul>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Liste</h2>
+  </div>
+
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+      <button class="delete" title="delete hero" (click)="delete(hero)">Supprimer</button>
+    </li>
+  </ul>
+</div>
